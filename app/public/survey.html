@@ -18,51 +18,96 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <h1>
-                <i class="far fa-user" aria-hidden="true"></i> Survey Questions</h1>
+        <div class="jumbotron-fluid">
+            <h2>
+                <i class="far fa-user" aria-hidden="true"></i> Survey Questions</h2>
             <hr class="my-1">
         </div>
-
+        <br>
         <h3>About You</h3>
-        <hr>
-        <h5>Name (Required)</h5>
-        <input id="name" type="text" required placeholder="your name" min="3" max="100" size="50">
-        <h5>Photo (Required)</h5>
-        <input id="photo" type="url" required placeholder="link" size="50">
-        <hr>
-        <h3>Question 1</h3>
-        <h5>this is question 1</h5>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select Value
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
-                <a class="dropdown-item" value="2">2</a>
-                <a class="dropdown-item" value="3">3</a>
-                <a class="dropdown-item" value="4">4</a>
-                <a class="dropdown-item" value="5">5 (Strongly Agree)</a>
+        <hr class="my-1">
+        <form id="userForm">
+            <div class="form-group">
+                <h4>
+                    <label for="name">Name</label>
+                </h4>
+                <input id="name" type="text" class="form-control"  placeholder="Your Name" required min="3" max="100"
+                    size="50">
+                <!-- <small id="nameHelp" class="form-text text-muted">A friend entry will be created for you using this name.</small> -->
+
+                <h4>
+                    <label for="image">Image</label>
+                </h4>
+                <input id="image" type="url" class="form-control"  placeholder="Link to your image" required>
+                <!-- <small id="imageHelp" class="form-text text-muted">Your friend entry will include this image</small> -->
             </div>
-        </div>
-        <h3>Question 2</h3>
-        <h5>this is question 2</h5>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select Value
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" value="1">1 (Strongly Disagree)</a>
-                <a class="dropdown-item" value="2">2</a>
-                <a class="dropdown-item" value="3">3</a>
-                <a class="dropdown-item" value="4">4</a>
-                <a class="dropdown-item" value="5">5 (Strongly Agree)</a>
+            <!-- </form> -->
+
+
+            <hr class="my-3">
+            <h3>Question 1</h3>
+            <h5>this is question</h5>
+            <select id="q1" data-width="fit" required>
+                <option value="" selected disabled hidden>Rate this statement</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2 (Disagree)</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4 (Agree)</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+            <hr class="my-1">
+            <h3>Question 2</h3>
+            <h5>this is question</h5>
+            <select id="q2" data-width="fit" required>
+                <option value="" selected disabled hidden>Rate this statement</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2 (Disagree)</option>
+                <option value="3">3 (Neutral)</option>
+                <option value="4">4 (Agree)</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <hr class="my-3">
+            <input type="submit" class="btn btn-primary btn-md " id="submit" form="userForm"></input>
+        </form>
+        <hr>
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friends List</a> |
+                    <a href="https://github.com/remrobem/FriendFinder">GitHub Repo</a>
+                </p>
             </div>
-        </div>
+        </footer>
 
     </div>
 
+    <!-- modal  -->
 
+    <div class="modal fade" id="matchModal" tabindex="-1" role="dialog" aria-labelledby="trainAddModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="modalContent">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your Best Match</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 id="matchName"></h3>
+                    <!-- <img id="matchImage" src= -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javaScript">
+
+
+
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 

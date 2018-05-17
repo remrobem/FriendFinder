@@ -9,7 +9,7 @@
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-var friendsArr = require("../data/friends.js");
+let friendsArray = require("../data/friends");
 
 // ===============================================================================
 // ROUTING
@@ -23,9 +23,8 @@ module.exports = function (app) {
     // ---------------------------------------------------------------------------
 
     app.get("/api/friends", function (req, res) {
-        res.json(friendsArr);
+        res.json(friendsArray);
     });
-
 
 
     // API POST Requests

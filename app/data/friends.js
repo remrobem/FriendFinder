@@ -50,6 +50,5 @@ let friendsArr = [{
     }
 ];
 
-
-// eport 
+// export 
 module.exports = friendsArr;

@@ -1,6 +1,6 @@
 # FriendFinder
 
-historical winner
+https://www.encyclopedia.com/sites/default/files/4/2793330.jpg
 
 market size
 

@@ -1,18 +1,9 @@
-// Your `htmlRoutes.js` file should include two routes:
+// Routing
 
-//    * A GET Route to `/survey` which should display the survey page.
-//    * A default, catch-all route that leads to `home.html` which displays the home page. 
+// send the survey page if requested
+// for all other get requests, the home page is sent
 
-
-// ===============================================================================
-// DEPENDENCIES
-// We need to include the path package to get the correct file path for our html
-// ===============================================================================
 const path = require("path");
-
-// ===============================================================================
-// ROUTING
-// ===============================================================================
 
 module.exports = function(app) {
 

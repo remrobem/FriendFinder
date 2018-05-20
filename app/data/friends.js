@@ -54,16 +54,14 @@ let friendsArr = {
         }
     ],
 
+    // function to add a new friend to the array
     newFriend: function (val) {
 
-        total = 0;
-
-        val.scores.forEach(element => {
-            total += parseInt(element);
-        });
+        // calculate the total of the the survey ratings
+        total = val.scores.reduce((total, score) => parseInt(total) + parseInt(score));
 
         val.total = total;
-        
+        // store the new person in the array
         friendsArr.friends.push(val);
     }
 };

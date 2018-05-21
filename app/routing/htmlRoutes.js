@@ -1,4 +1,4 @@
-// Routing
+// HTML Routing
 
 // send the survey page if requested
 // for all other get requests, the home page is sent

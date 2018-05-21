@@ -1,54 +1,41 @@
-# FriendFinder
+# Application
 
-https://www.encyclopedia.com/sites/default/files/4/2793330.jpg
+## FriendFinder
 
-market size
+## Description
 
-support local fans
+Anwser a survey of 10 questions to find someone of similar interests - a new friend
 
-cool logo
----------------------------------
-idividual goal vs team
+## Getting Started
 
-ball used
+### Prerequsites
 
-indoor/outdoor
+1. Node.js must be installed (https://nodejs.org/en/download/)
 
-running
+### Installation
 
-stamina
+1. Clone repository friendfinder from https://github.com/remrobem/FriendFinder
+1. Open a terminal session for the directory where the application was cloned to
+1. run *npm install* to install the dependencies
+1. run *node server.js*
+1. In a browser, go to localhost:8081 or the port number provided after you run the *node server.js* command
 
-speed
+## Using the Application
 
-strength 
+The application consist of 2 pages:
 
-skill
+1. Home
+    1. the primary action is to go to the survey by selecting the *Go To Survey* button
+    1. Additionally, 
+        1. *API Friends List* is available to display the available friends in a JSON format
+        1. *GitHub Repo* will go to the GitHub page for this project
+![Alt text](/readme_images/home.png?raw=true "Home Page")       
 
-agility
-
-hitting a ball
-
-throwing
-
-requires special area
-
-competion available
-
-contact with other competitors
-
-wheels
-
-baseball
-basketball
-football
-soccer
-volleyball
-weightlifting
-running
-hiking
-walking
-yoga
-bike riding
-skating
-billiards
+1. Survey
+    1. Add your name and a link to a nice iamage of you to be shared
+    1. Answers all 10 survey questions
+    1. Select the *Submit* button to find a friend that closely matches your survey responses
+    1. The friends name and image are presented in a window
+![Alt text](/readme_images/survey.png?raw=true "Survey Page")   
+![Alt text](/readme_images/modal.png?raw=true "Friend search result")   
 

@@ -1,12 +1,6 @@
-// Your `apiRoutes.js` file should contain two routes:
-
-//    * A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-//    * A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic. 
-
-
+// API Routing
 
 let friendsArr = require("../data/friends");
-
 
 module.exports = function (app) {
 
@@ -17,21 +11,20 @@ module.exports = function (app) {
 
     app.post("/api/friends", function (req, res) {
 
-        // create object with high total value to insure that 
-        // at least one entry in the array will have a lower value
-        match = {
-            total: 99999
-        };
+        // run function to calculate the rating total for the new person
+        req.body.total = friendsArr.newFriendTotal(req.body);
         // find the array entry that has the closest (higher or lower) value to the new array entry
+        leastDifference = 999999;
         friendsArr.friends.forEach(element => {
-            if (Math.abs(element.total - req.body.total) < match.total) {
+            difference = Math.abs(element.total - req.body.total);
+            if (difference < leastDifference ) {
                 match = element;
+                leastDifference = difference;
             };
         });
-
-        // run function to calculate the rating total for the new person
-        // and store the new person in the array
-        friendsArr.newFriend(req.body);
+        
+        // add new friend to array. needs to be done after search so that new friend is not selected
+        friendsArr.newFriendAdd(req.body);
 
         // respond back with the closest match
         res.json(match);

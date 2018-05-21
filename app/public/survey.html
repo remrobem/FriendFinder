@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <title>Activity Finder!</title>
+    <title>Friend Finder!</title>
 
 </head>
 
@@ -43,7 +43,7 @@
                 <!--   the questions are dynamically added in this section -->
                 <div class="questionSection"></div>
             </div>
-       
+
             <hr class="my-3">
             <input type="submit" class="btn btn-primary btn-lg" id="submitBtn" value="Submit">
         </form>
@@ -86,6 +86,7 @@
 
 
     <script>
+        // list of questions for the survey
         const questionArr = [
             "I would rather eat dinner at the ballpark than at a 5 star restaurant",
             "Sunday mornings are for church",
@@ -99,6 +100,7 @@
             "President Trump is the man"
         ];
 
+        // common code to display each question
         questionArr.forEach(function (element, index) {
             $(".questionSection").append(
                 `<hr class="my-1">
@@ -116,7 +118,7 @@
 
         })
 
-        $("#userForm").submit(function ( event ) {
+        $("#userForm").submit(function (event) {
             event.preventDefault();
 
             // initilize object with user request data
@@ -137,7 +139,14 @@
                 ],
                 total: 0
             };
-            requestData.scores = requestData.scores.map(x => parseInt(x));
+
+            // console.log(requestData);
+            // requestData.scores.forEach(function (score, index) {
+            //     score[index] = parseInt(score[index]);
+            // });
+            // console.log(requestData);
+
+
             // post the data to the friends array 
             // the post will find the closest match and return it
             // when returned, it is displayed a modal

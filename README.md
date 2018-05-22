@@ -17,6 +17,10 @@ Anwser a survey of 10 questions to find someone of similar interests - a new fri
 1. Clone repository friendfinder from https://github.com/remrobem/FriendFinder
 1. Open a terminal session for the directory where the application was cloned to
 1. run *npm install* to install the dependencies
+    * The dependancies are:
+        * "body-parser": "^1.18.3",
+        * "express": "^4.16.3",
+        * "path": "^0.12.7"
 1. run *node server.js*
 1. In a browser, go to localhost:8081 or the port number provided after you run the *node server.js* command
 
@@ -32,7 +36,7 @@ The application consist of 2 pages:
 ![Alt text](/readme_images/home.png?raw=true "Home Page")       
 
 1. Survey
-    1. Add your name and a link to a nice iamage of you to be shared
+    1. Add your name and a link to a nice image of yourself
     1. Answers all 10 survey questions
     1. Select the *Submit* button to find a friend that closely matches your survey responses
     1. The friends name and image are presented in a window
